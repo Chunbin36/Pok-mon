@@ -23,22 +23,15 @@ PokeAPI를 기반으로 만든 반응형 포켓몬 도감입니다.
 
 ## 실행 방법
 
-### 1) 파일로 바로 실행
+### 배포 버전 접속
+
+아래 주소에서 바로 이용할 수 있습니다.  
+[https://pok-mon-ecru.vercel.app](https://pok-mon-ecru.vercel.app)
+
+### 로컬 파일 실행
 
 1. 프로젝트를 다운로드/클론
 2. `index.html`을 브라우저에서 열기
-
-### 2) 로컬 서버 실행 (권장)
-
-정적 서버로 실행하면 캐시/경로 이슈를 줄일 수 있습니다.
-
-예시 (Python):
-
-```bash
-python3 -m http.server 5500
-```
-
-브라우저에서 `http://localhost:5500` 접속
 
 ## 프로젝트 구조
 
