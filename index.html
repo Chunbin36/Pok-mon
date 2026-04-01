@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포켓몬 도감</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="intro-active">
+    <section class="intro" id="introScreen" aria-label="인트로 화면">
+      <button class="logo-button" id="enterButton" type="button" aria-label="포켓몬 도감 시작하기">
+        <img src="assets/intro-logo.png" alt="포켓몬 로고" class="logo-image" />
+      </button>
+      <p class="intro-hint">로고를 누르면 도감이 열립니다</p>
+    </section>
+
+    <main class="app hidden" id="appRoot">
+      <div class="pokedex-shell" id="pokedexShell">
+        <section class="left-panel">
+          <div class="camera-wrap">
+            <span class="camera-main"></span>
+            <span class="camera-sub"></span>
+            <span class="camera-sub"></span>
+            <span class="camera-sub"></span>
+          </div>
+          <h1 class="title">포켓몬 도감</h1>
+          <div class="hero-image-wrap">
+            <img src="assets/pokedex-reference.png" alt="포켓몬 도감 이미지" class="hero-image" />
+          </div>
+        </section>
+
+        <section class="right-panel">
+          <header class="toolbar">
+            <form id="searchForm" class="search-form">
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="포켓몬 이름 또는 번호 검색 (한글/영문/번호)"
+                autocomplete="off"
+              />
+              <button type="submit">검색</button>
+              <button type="button" id="resetButton" class="ghost-button">초기화</button>
+            </form>
+          </header>
+
+          <div class="status-row">
+            <p id="resultText">데이터를 불러오는 중...</p>
+          </div>
+
+          <section id="pokemonList" class="pokemon-grid" aria-live="polite"></section>
+
+          <nav class="pagination" id="pagination">
+            <button type="button" id="prevPage">이전</button>
+            <span id="pageInfo">1 / 1</span>
+            <button type="button" id="nextPage">다음</button>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <dialog id="detailDialog" class="detail-dialog">
+      <article id="detailContent" class="detail-content"></article>
+      <button id="closeDialog" class="close-dialog" type="button">닫기</button>
+    </dialog>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
