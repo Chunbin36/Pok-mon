@@ -66,6 +66,9 @@ const ui = {
   prevPage: document.getElementById("prevPage"),
   nextPage: document.getElementById("nextPage"),
   pageInfo: document.getElementById("pageInfo"),
+  mobileScrollControls: document.getElementById("mobileScrollControls"),
+  scrollTopButton: document.getElementById("scrollTopButton"),
+  scrollBottomButton: document.getElementById("scrollBottomButton"),
   detailDialog: document.getElementById("detailDialog"),
   detailContent: document.getElementById("detailContent"),
   closeDialog: document.getElementById("closeDialog"),
@@ -109,6 +112,7 @@ ui.enterButton.addEventListener("click", async () => {
   window.setTimeout(() => {
     ui.introScreen.classList.add("hidden");
     document.body.classList.remove("intro-active");
+    ui.mobileScrollControls?.classList.remove("hidden");
   }, 520);
 
   await initializeDex();
@@ -146,6 +150,14 @@ ui.nextPage.addEventListener("click", async () => {
 ui.closeDialog.addEventListener("click", () => {
   if (typeof ui.detailDialog.close === "function") ui.detailDialog.close();
   else ui.detailDialog.removeAttribute("open");
+});
+
+ui.scrollTopButton?.addEventListener("click", () => {
+  ui.appRoot.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+ui.scrollBottomButton?.addEventListener("click", () => {
+  ui.appRoot.scrollTo({ top: ui.appRoot.scrollHeight, behavior: "smooth" });
 });
 
 async function initializeDex() {
